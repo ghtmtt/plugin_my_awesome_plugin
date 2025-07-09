@@ -1,0 +1,26 @@
+[general]
+name=My Awesome Plugin
+about=This plugin is a revolution!
+category=Vector
+hasProcessingProvider=True
+description=Extends QGIS with revolutionary features that every single GIS end-users was expected (or not)!
+icon=resources/images/default_icon.png
+tags=topic1,topic2
+
+# credits and contact
+author=Matteo Ghetta
+email=qgis@company.com
+homepage=https://gitlab.com/ghtmtt/my-awesome-plugin
+repository=https://gitlab.com/ghtmtt/my-awesome-plugin
+tracker=https://gitlab.com/ghtmtt/my-awesome-plugin/issues/
+
+# experimental flag
+deprecated=False
+experimental=True
+qgisMinimumVersion=3.40
+qgisMaximumVersion=3.99
+supportsQt6=False
+
+# versioning
+version=0.1.0
+changelog=
