@@ -1,13 +1,5 @@
 name: "📚 Documentation"
 
-# Global environment variables
-env:
-  CONDITION_IS_PUSH: ${{ github.event_name == 'push' && (startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/main') }}
-  CONDITION_IS_WORKFLOW_RUN: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' }}
-  PROJECT_FOLDER: my_awesome_plugin
-  PYTHON_VERSION: 3.12
-
-# This workflow is triggered on:
 on:
   push:
     branches:
@@ -36,13 +28,6 @@ on:
       - "📦 Package & 🚀 Release"
     types:
       - completed
-
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  id-token: write
-  pages: write
 
 # Allow one concurrent deployment per branch/pr
 concurrency:
