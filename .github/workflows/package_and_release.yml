@@ -157,12 +157,12 @@ jobs:
           fail_on_unmatched_files: true
           generate_release_notes: true
 
-      - name: Deploy plugin
-        run: >-
-          qgis-plugin-ci
-          release ${GITHUB_REF/refs\/tags\//}
-          --allow-uncommitted-changes
-          --create-plugin-repo
-          --github-token ${{ secrets.GITHUB_TOKEN }}
-          --osgeo-username ${{ secrets.OSGEO_USER }}
-          --osgeo-password ${{ secrets.OSGEO_PASSWORD }}
+      # - name: Deploy plugin
+      #   run: >-
+      #     qgis-plugin-ci
+      #     release ${GITHUB_REF/refs\/tags\//}
+      #     --allow-uncommitted-changes
+      #     --create-plugin-repo
+      #     --github-token ${{ secrets.GITHUB_TOKEN }}
+      #     --osgeo-username ${{ secrets.OSGEO_USER }}
+      #     --osgeo-password ${{ secrets.OSGEO_PASSWORD }}
