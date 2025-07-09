@@ -22,8 +22,6 @@ from my_awesome_plugin.__about__ import (
     __uri_homepage__,
 )
 from my_awesome_plugin.gui.dlg_settings import PlgOptionsFactory
-
-
 from my_awesome_plugin.processing import (
     MyAwesomePluginProvider,
 )
@@ -52,9 +50,9 @@ class MyAwesomePluginPlugin:
             0:2
         ]
         locale_path: Path = (
-            DIR_PLUGIN_ROOT 
-            / "resources" 
-            / "i18n" 
+            DIR_PLUGIN_ROOT
+            / "resources"
+            / "i18n"
             / f"{__title__.lower()}_{self.locale}.qm"
         )
         self.log(message=f"Translation: {self.locale}, {locale_path}", log_level=4)
@@ -96,7 +94,6 @@ class MyAwesomePluginPlugin:
         self.iface.addPluginToMenu(__title__, self.action_help)
         # -- Processing
         self.initProcessing()
-        
 
         # -- Help menu
 
@@ -114,11 +111,11 @@ class MyAwesomePluginPlugin:
         self.iface.pluginHelpMenu().addAction(
             self.action_help_plugin_menu_documentation
         )
+
     def initProcessing(self):
-        """Initialize the processing provider."""    
+        """Initialize the processing provider."""
         self.provider = MyAwesomePluginProvider()
         QgsApplication.processingRegistry().addProvider(self.provider)
-    
 
     def tr(self, message: str) -> str:
         """Get the translation for a string using Qt translation API.
@@ -141,7 +138,6 @@ class MyAwesomePluginPlugin:
         self.iface.unregisterOptionsWidgetFactory(self.options_factory)
         # -- Unregister processing
         QgsApplication.processingRegistry().removeProvider(self.provider)
-        
 
         # remove from QGIS help/extensions menu
         if self.action_help_plugin_menu_documentation:

@@ -13,7 +13,7 @@ Usage from the repo root folder:
 
 # PyQGIS
 from qgis.core import QgsApplication
-from qgis.testing import unittest, start_app
+from qgis.testing import start_app, unittest
 
 from my_awesome_plugin.processing.provider import (
     MyAwesomePluginProvider,
@@ -31,7 +31,7 @@ class TestProcessing(unittest.TestCase):
             self.provider = MyAwesomePluginProvider()
             QgsApplication.processingRegistry().addProvider(self.provider)
         self.maxDiff = None
-                
+
         # Start App needed to run processing on unittest
         start_app()
 
